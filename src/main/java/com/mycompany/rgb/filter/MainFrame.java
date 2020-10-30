@@ -1,15 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.mycompany.rgb.filter;
 
-/**
- *
- * @author Jonay
- */
+
 public class MainFrame extends javax.swing.JFrame {
 
     /** Creates new form MainFrame */
@@ -26,17 +17,138 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        logoPosButtonGroup = new javax.swing.ButtonGroup();
+        rgbPanel = new javax.swing.JPanel();
+        allcbox = new javax.swing.JCheckBox();
+        redcbox = new javax.swing.JCheckBox();
+        bluecbox = new javax.swing.JCheckBox();
+        greencbox = new javax.swing.JCheckBox();
+        logoPosPanel = new javax.swing.JPanel();
+        upperLeftrbutton = new javax.swing.JRadioButton();
+        lowerLeftrbutton = new javax.swing.JRadioButton();
+        upperRightrbutton = new javax.swing.JRadioButton();
+        lowerRightrbutton = new javax.swing.JRadioButton();
+        lienzo = new com.mycompany.rgb.filter.Lienzo();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Filtrar componentes RGB");
+
+        rgbPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Mostrar RGB"));
+
+        allcbox.setText("Todos");
+
+        redcbox.setText("Rojo");
+
+        bluecbox.setText("Azul");
+
+        greencbox.setText("Verde");
+
+        javax.swing.GroupLayout rgbPanelLayout = new javax.swing.GroupLayout(rgbPanel);
+        rgbPanel.setLayout(rgbPanelLayout);
+        rgbPanelLayout.setHorizontalGroup(
+            rgbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rgbPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(rgbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(allcbox)
+                    .addComponent(redcbox)
+                    .addComponent(bluecbox)
+                    .addComponent(greencbox))
+                .addContainerGap(62, Short.MAX_VALUE))
+        );
+        rgbPanelLayout.setVerticalGroup(
+            rgbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rgbPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(allcbox)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(redcbox)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bluecbox)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(greencbox)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        logoPosPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Posición del logo"));
+
+        logoPosButtonGroup.add(upperLeftrbutton);
+        upperLeftrbutton.setText("Arriba Izquierda");
+
+        logoPosButtonGroup.add(lowerLeftrbutton);
+        lowerLeftrbutton.setText("Abajo Izquierda");
+
+        logoPosButtonGroup.add(upperRightrbutton);
+        upperRightrbutton.setText("Arriba Derecha");
+
+        logoPosButtonGroup.add(lowerRightrbutton);
+        lowerRightrbutton.setText("Abajo Derecha");
+
+        javax.swing.GroupLayout logoPosPanelLayout = new javax.swing.GroupLayout(logoPosPanel);
+        logoPosPanel.setLayout(logoPosPanelLayout);
+        logoPosPanelLayout.setHorizontalGroup(
+            logoPosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(logoPosPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(logoPosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(upperLeftrbutton)
+                    .addComponent(lowerLeftrbutton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addGroup(logoPosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(upperRightrbutton)
+                    .addComponent(lowerRightrbutton))
+                .addContainerGap())
+        );
+        logoPosPanelLayout.setVerticalGroup(
+            logoPosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(logoPosPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(logoPosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(upperLeftrbutton)
+                    .addComponent(upperRightrbutton))
+                .addGap(18, 18, 18)
+                .addGroup(logoPosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lowerLeftrbutton)
+                    .addComponent(lowerRightrbutton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout lienzoLayout = new javax.swing.GroupLayout(lienzo);
+        lienzo.setLayout(lienzoLayout);
+        lienzoLayout.setHorizontalGroup(
+            lienzoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        lienzoLayout.setVerticalGroup(
+            lienzoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 138, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lienzo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(rgbPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(logoPosPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 4, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(logoPosPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rgbPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lienzo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -78,6 +190,18 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox allcbox;
+    private javax.swing.JCheckBox bluecbox;
+    private javax.swing.JCheckBox greencbox;
+    private com.mycompany.rgb.filter.Lienzo lienzo;
+    private javax.swing.ButtonGroup logoPosButtonGroup;
+    private javax.swing.JPanel logoPosPanel;
+    private javax.swing.JRadioButton lowerLeftrbutton;
+    private javax.swing.JRadioButton lowerRightrbutton;
+    private javax.swing.JCheckBox redcbox;
+    private javax.swing.JPanel rgbPanel;
+    private javax.swing.JRadioButton upperLeftrbutton;
+    private javax.swing.JRadioButton upperRightrbutton;
     // End of variables declaration//GEN-END:variables
 
 }
