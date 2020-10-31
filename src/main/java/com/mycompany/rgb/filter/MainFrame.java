@@ -1,7 +1,11 @@
 package com.mycompany.rgb.filter;
 
+import javax.swing.JCheckBox;
+
 
 public class MainFrame extends javax.swing.JFrame {
+
+    private int selectedColors = 3;
 
     /** Creates new form MainFrame */
     public MainFrame() {
@@ -35,13 +39,38 @@ public class MainFrame extends javax.swing.JFrame {
 
         rgbPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Mostrar RGB"));
 
+        allcbox.setSelected(true);
         allcbox.setText("Todos");
+        allcbox.setEnabled(false);
+        allcbox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                allcboxItemStateChanged(evt);
+            }
+        });
 
+        redcbox.setSelected(true);
         redcbox.setText("Rojo");
+        redcbox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                redcboxItemStateChanged(evt);
+            }
+        });
 
+        bluecbox.setSelected(true);
         bluecbox.setText("Azul");
+        bluecbox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                bluecboxItemStateChanged(evt);
+            }
+        });
 
+        greencbox.setSelected(true);
         greencbox.setText("Verde");
+        greencbox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                greencboxItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout rgbPanelLayout = new javax.swing.GroupLayout(rgbPanel);
         rgbPanel.setLayout(rgbPanelLayout);
@@ -73,16 +102,39 @@ public class MainFrame extends javax.swing.JFrame {
         logoPosPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Posición del logo"));
 
         logoPosButtonGroup.add(upperLeftrbutton);
+        upperLeftrbutton.setSelected(true);
         upperLeftrbutton.setText("Arriba Izquierda");
+        upperLeftrbutton.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                upperLeftrbuttonItemStateChanged(evt);
+            }
+        });
 
         logoPosButtonGroup.add(lowerLeftrbutton);
         lowerLeftrbutton.setText("Abajo Izquierda");
+        lowerLeftrbutton.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                lowerLeftrbuttonItemStateChanged(evt);
+            }
+        });
 
         logoPosButtonGroup.add(upperRightrbutton);
         upperRightrbutton.setText("Arriba Derecha");
+        upperRightrbutton.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        upperRightrbutton.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                upperRightrbuttonItemStateChanged(evt);
+            }
+        });
 
         logoPosButtonGroup.add(lowerRightrbutton);
         lowerRightrbutton.setText("Abajo Derecha");
+        lowerRightrbutton.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        lowerRightrbutton.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                lowerRightrbuttonItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout logoPosPanelLayout = new javax.swing.GroupLayout(logoPosPanel);
         logoPosPanel.setLayout(logoPosPanelLayout);
@@ -121,7 +173,7 @@ public class MainFrame extends javax.swing.JFrame {
         );
         lienzoLayout.setVerticalGroup(
             lienzoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 138, Short.MAX_VALUE)
+            .addGap(0, 768, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,7 +188,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(rgbPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(logoPosPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 4, Short.MAX_VALUE)))
+                        .addGap(0, 648, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -154,6 +206,90 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void redcboxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_redcboxItemStateChanged
+        if(redcbox.isSelected()){
+            this.lienzo.setRedState(true);
+            selectedColors++;
+            enableRGBcboxes();
+        }else {
+            this.lienzo.setRedState(false);
+            unselectAllCheckBox();
+        }
+        this.lienzo.repaint();
+    }//GEN-LAST:event_redcboxItemStateChanged
+
+    private void allcboxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_allcboxItemStateChanged
+        if(allcbox.isSelected()){
+            redcbox.setSelected(true);
+            greencbox.setSelected(true);
+            bluecbox.setSelected(true);
+            allcbox.setEnabled(false);
+            this.selectedColors = 3;
+            enableRGBcboxes();
+        }
+    }//GEN-LAST:event_allcboxItemStateChanged
+
+    private void bluecboxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_bluecboxItemStateChanged
+        if(bluecbox.isSelected()){
+            this.lienzo.setBlueState(true);
+            selectedColors++;
+            enableRGBcboxes();
+        }else {
+            this.lienzo.setBlueState(false);
+            unselectAllCheckBox();
+        }
+        this.lienzo.repaint();
+    }//GEN-LAST:event_bluecboxItemStateChanged
+
+    private void greencboxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_greencboxItemStateChanged
+        if(greencbox.isSelected()){
+            this.lienzo.setGreenState(true);
+            selectedColors++;
+            enableRGBcboxes();
+        }else {
+            this.lienzo.setGreenState(false);
+            unselectAllCheckBox();
+        }
+        this.lienzo.repaint();
+    }//GEN-LAST:event_greencboxItemStateChanged
+
+    private void upperLeftrbuttonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_upperLeftrbuttonItemStateChanged
+        if(this.upperLeftrbutton.isSelected()){
+            this.lienzo.setLogoPos(Lienzo.LogoPos.UPPER_LEFT);
+            this.lienzo.repaint();
+        }
+    }//GEN-LAST:event_upperLeftrbuttonItemStateChanged
+
+    private void upperRightrbuttonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_upperRightrbuttonItemStateChanged
+        if(this.upperRightrbutton.isSelected()){
+            this.lienzo.setLogoPos(Lienzo.LogoPos.UPPER_RIGHT);
+            this.lienzo.repaint();
+        }
+    }//GEN-LAST:event_upperRightrbuttonItemStateChanged
+
+    private void lowerLeftrbuttonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_lowerLeftrbuttonItemStateChanged
+        if(this.lowerLeftrbutton.isSelected()){
+            this.lienzo.setLogoPos(Lienzo.LogoPos.LOWER_LEFT);
+            this.lienzo.repaint();
+        }
+    }//GEN-LAST:event_lowerLeftrbuttonItemStateChanged
+
+    private void lowerRightrbuttonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_lowerRightrbuttonItemStateChanged
+        if(this.lowerRightrbutton.isSelected()){
+            this.lienzo.setLogoPos(Lienzo.LogoPos.LOWER_RIGHT);
+            this.lienzo.repaint();
+        }
+    }//GEN-LAST:event_lowerRightrbuttonItemStateChanged
+
+    private void unselectAllCheckBox(){
+        allcbox.setSelected(false);
+        allcbox.setEnabled(true);
+        selectedColors--;
+        if( selectedColors == 1){
+            disableRemainingSelectedCheckBox();
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -164,12 +300,8 @@ public class MainFrame extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
+            javax.swing.UIManager.setLookAndFeel(
+                    javax.swing.UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -204,4 +336,23 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JRadioButton upperRightrbutton;
     // End of variables declaration//GEN-END:variables
 
+    private void disableRemainingSelectedCheckBox() {
+        JCheckBox[] cboxes = {redcbox, greencbox, bluecbox};
+        for (JCheckBox cbox : cboxes) {
+            if(cbox.isSelected()){
+                cbox.setEnabled(false);
+                break;
+            }
+        }
+    }
+
+    private void enableRGBcboxes() {
+        redcbox.setEnabled(true);
+        greencbox.setEnabled(true);
+        bluecbox.setEnabled(true);
+        if(selectedColors == 3){
+            allcbox.setSelected(true);
+            allcbox.setEnabled(false);
+        }
+    }
 }
