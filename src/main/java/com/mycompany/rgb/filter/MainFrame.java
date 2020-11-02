@@ -33,6 +33,8 @@ public class MainFrame extends javax.swing.JFrame {
         upperRightrbutton = new javax.swing.JRadioButton();
         lowerRightrbutton = new javax.swing.JRadioButton();
         lienzo = new com.mycompany.rgb.filter.Lienzo();
+        jonayLabel = new javax.swing.JLabel();
+        samuelLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Filtrar componentes RGB");
@@ -176,6 +178,10 @@ public class MainFrame extends javax.swing.JFrame {
             .addGap(0, 768, Short.MAX_VALUE)
         );
 
+        jonayLabel.setText("Jonay Suárez Ramírez");
+
+        samuelLabel.setText("Samuel Trujillo Santana");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -188,7 +194,11 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(rgbPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(logoPosPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 648, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jonayLabel)
+                            .addComponent(samuelLabel))
+                        .addGap(0, 533, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -196,8 +206,13 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(logoPosPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rgbPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rgbPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jonayLabel)
+                            .addGap(19, 19, 19)
+                            .addComponent(samuelLabel))
+                        .addComponent(logoPosPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lienzo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -325,6 +340,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox allcbox;
     private javax.swing.JCheckBox bluecbox;
     private javax.swing.JCheckBox greencbox;
+    private javax.swing.JLabel jonayLabel;
     private com.mycompany.rgb.filter.Lienzo lienzo;
     private javax.swing.ButtonGroup logoPosButtonGroup;
     private javax.swing.JPanel logoPosPanel;
@@ -332,6 +348,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JRadioButton lowerRightrbutton;
     private javax.swing.JCheckBox redcbox;
     private javax.swing.JPanel rgbPanel;
+    private javax.swing.JLabel samuelLabel;
     private javax.swing.JRadioButton upperLeftrbutton;
     private javax.swing.JRadioButton upperRightrbutton;
     // End of variables declaration//GEN-END:variables
