@@ -3,7 +3,6 @@ package com.mycompany.rgb.filter;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -20,7 +19,8 @@ public class Lienzo extends JPanel{
         LOWER_LEFT(0, 640), 
         LOWER_RIGHT(890, 640);
         
-        private int posx, posy;
+        private final int posx;
+        private final int posy;
         
         LogoPos(int posx, int posy){
             this.posx = posx;
@@ -41,7 +41,7 @@ public class Lienzo extends JPanel{
     private boolean green = true;
     private boolean blue = true;
     private BufferedImage logo;
-    private LogoPos logoPos = LogoPos.UPPER_LEFT;
+    private LogoPos logoPos = LogoPos.UPPER_RIGHT;
 
     public Lienzo() {
         try {

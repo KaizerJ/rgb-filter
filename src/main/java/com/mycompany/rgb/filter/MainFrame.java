@@ -102,7 +102,6 @@ public class MainFrame extends javax.swing.JFrame {
         logoPosPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Posición del logo"));
 
         logoPosButtonGroup.add(upperLeftrbutton);
-        upperLeftrbutton.setSelected(true);
         upperLeftrbutton.setText("Arriba Izquierda");
         upperLeftrbutton.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -119,6 +118,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         logoPosButtonGroup.add(upperRightrbutton);
+        upperRightrbutton.setSelected(true);
         upperRightrbutton.setText("Arriba Derecha");
         upperRightrbutton.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         upperRightrbutton.addItemListener(new java.awt.event.ItemListener() {
